@@ -38,7 +38,8 @@ a{color:#1E6F66}a:hover{color:#14514A}
 .draw{stroke-dasharray:600;stroke-dashoffset:600;animation:dr 3s ease forwards infinite alternate}
 @keyframes dr{to{stroke-dashoffset:0}}
 input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
-@media (max-width: 760px){.navlinks{display:none !important}}
+.hero-avatar{display:none}
+@media (max-width: 760px){.navlinks{display:none !important}.hero-foto{display:none !important}.hero-avatar{display:flex !important}}
 @media (prefers-reduced-motion: reduce){.eq,.marquee,.pulse,.ring,.sonar,.draw{animation:none}.draw{stroke-dashoffset:0}}
 </style>
 <style>html{scroll-behavior:smooth}*,*::before,*::after{box-sizing:border-box}h1,h2,h3,p{overflow-wrap:break-word}</style>
@@ -72,21 +73,25 @@ input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
 
 <!-- HERO -->
 <section id="inicio" style="position: relative; background: radial-gradient(700px 480px at 92% 8%, #E3F1EC, transparent 70%), radial-gradient(600px 420px at 0% 100%, #F4EADB, transparent 70%)">
-<div aria-hidden="true" style="position: absolute; left: 50%; top: 40%; width: 0; height: 0; pointer-events: none">
+<div aria-hidden="true" style="position: absolute; left: 80%; top: 45%; width: 0; height: 0; pointer-events: none">
 <span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(30,111,102,.22)"></span>
 <span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(30,111,102,.22); animation-delay: 1.7s"></span>
 <span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(201,154,78,.3); animation-delay: 3.4s"></span>
 </div>
-<div style="position: relative; max-width: 1040px; margin: 0 auto; padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 40px)">
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
 
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<div style="flex: 999 1 540px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 20px">
+<div class="hero-avatar" style="align-items: center; gap: 12px">
+<img src="img/laisa-avatar.jpg" alt="Fonoaudióloga Laisa Lima" width="64" height="64" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid #FFFFFF; box-shadow: 0 6px 18px rgba(20,32,28,.15)">
+<span style="display: flex; flex-direction: column; line-height: 1.25"><strong style="font-family: Sora, sans-serif; font-size: 17px">Laisa Lima</strong><span style="font-size: 13px; color: #55625D">Fonoaudióloga · Audiologia</span></span>
+</div>
 <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #1E6F66; background: #FFFFFF; border: 1px solid #D6E7E1; padding: 9px 16px; border-radius: 999px">
 <span style="position: relative; width: 8px; height: 8px"><span style="position: absolute; inset: 0; border-radius: 50%; background: #1E6F66"></span><span class="pulse" style="position: absolute; inset: 0; border-radius: 50%; background: #1E6F66"></span></span>
 Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <h1 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.035em">Exames de audição, laudos e <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66; letter-spacing: -0.01em">aparelhos auditivos</span> em Itabirito.</h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #45524D; max-width: 680px">A fonoaudióloga <strong style="color: #14201C">Laisa Lima</strong> cuida da audição de bebês, crianças, adultos e idosos: do Teste da Orelhinha à escolha e adaptação do aparelho auditivo.</p>
 
-<div style="width: 100%; text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+<div style="width: 100%; text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px">
 <a href="#teste" class="btn" style="text-decoration: none; background: #1E6F66; color: #FFFFFF; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
 <span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15c-1.5-1.2-2.5-3-2.5-5a7 7 0 0 1 14 0c0 3-2 4.2-3.2 5.3-1 .9-1.3 1.7-1.3 2.7a3 3 0 0 1-5.5 1.6"/><path d="M9 10a3 3 0 0 1 6 0"/></svg></span>
 <span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Fazer o teste de audição</strong><span style="font-size: 13px; color: #D4EAE4">Grátis · menos de 1 minuto</span></span>
@@ -104,6 +109,16 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Onde fica o consultório</strong><span style="font-size: 13px; color: #55625D">Hospital São Vicente · Itabirito</span></span>
 </a>
 </div>
+</div>
+
+<div class="hero-foto" style="flex: 1 1 340px; min-width: 0; max-width: 440px; margin: 0 auto; position: relative">
+<div style="position: absolute; inset: 24px -16px -16px 24px; border-radius: 36px; background: #1E6F66; opacity: .12" aria-hidden="true"></div>
+<img src="img/laisa.jpg" alt="Fonoaudióloga Laisa Lima sorrindo, de jaleco" width="586" height="568" style="position: relative; display: block; width: 100%; height: auto; aspect-ratio: 586 / 568; object-fit: cover; border-radius: 32px; box-shadow: 0 30px 70px rgba(20,32,28,.14)">
+<div style="position: absolute; left: -18px; bottom: 28px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 18px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 14px 34px rgba(20,32,28,.12)">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #E3F1EC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+<span style="display: flex; flex-direction: column; line-height: 1.3"><strong style="font-family: Sora, sans-serif; font-size: 15px">Laisa Lima</strong><span style="font-size: 12px; color: #55625D">Fonoaudióloga · CRFa 6-7563</span></span>
+</div>
+<div style="position: absolute; right: -10px; top: 26px; background: #1E6F66; color: #FFFFFF; border-radius: 16px; padding: 10px 14px; font-size: 13px; font-weight: 700; box-shadow: 0 14px 30px rgba(30,111,102,.3)">Audiologia e Saúde Coletiva</div>
 </div>
 
 </div>
