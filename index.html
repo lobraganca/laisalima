@@ -141,7 +141,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <section id="fases" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px) clamp(40px, 5vw, 64px); display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A6B26">Audição em cada fase da vida</span>
-<h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Escolha a fase e veja <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">como a Laisa ajuda.</span></h2>
+<h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Toque em uma fase e veja <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">como a Laisa ajuda.</span></h2>
 </div>
 <div id="fases" style="display: flex; flex-direction: column; gap: 24px"></div>
 </section>
@@ -463,23 +463,22 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
   ];
   function renderFases() {
     var el = document.getElementById('fases'); if (!el) return;
-    var fa = fasesData[S.fase];
-    el.innerHTML = '<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 10px">' +
-      '<div aria-hidden="true" style="position: absolute; left: 4%; right: 4%; top: 37px; height: 2px; background: repeating-linear-gradient(90deg, #D9D3C6 0 8px, transparent 8px 16px)"></div>' +
-      fasesData.map(function (f, i) {
-        var a = S.fase === i;
-        return '<button type="button" data-act="fase" data-i="' + i + '" aria-pressed="' + a + '" style="position: relative; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; border-radius: 22px; min-height: 44px; transition: all .25s ease; color: #14201C; ' + (a ? 'background: #FFFFFF; border: 2px solid #1E6F66; box-shadow: 0 16px 36px rgba(30,111,102,.14);' : 'background: transparent; border: 2px solid transparent;') + '">' +
-          '<span style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Sora, sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 6px; ' + (a ? 'background: #1E6F66; color: #FFFFFF;' : 'background: #FFFFFF; color: #1E6F66; border: 1.5px solid #D6E7E1;') + '">' + pad(i + 1) + '</span>' +
-          '<span style="font-family: Sora, sans-serif; font-size: 17px; font-weight: 600">' + f.nome + '</span><span style="font-size: 13px; color: #55625D">' + f.idade + '</span></button>';
-      }).join('') + '</div>' +
-      '<div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: clamp(20px, 3vw, 32px); display: flex; flex-wrap: wrap; gap: 22px; align-items: center; box-shadow: 0 24px 60px rgba(20,32,28,.06)">' +
-      '<div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px"><span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">' + fa.servico + '</span>' +
-      '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(24px, 3vw, 34px); line-height: 1.15; letter-spacing: -0.02em">' + fa.titulo + '</h3>' +
-      '<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #45524D">' + fa.texto + '</p>' +
-      '<a href="' + wa(fa.msg) + '" target="_blank" rel="noopener" class="btn" style="align-self: flex-start; text-decoration: none; background: #1E6F66; color: #FFFFFF; padding: 15px 24px; border-radius: 999px; font-weight: 700; min-height: 50px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">' + fa.cta + ' →</a></div>' +
-      '<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B7671">Fique de olho se</span>' +
-      fa.sinais.map(function (x) { return '<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #34413C; background: #FBFAF7; border: 1px solid #EFEBE3; border-radius: 14px; padding: 10px 12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9A6B26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>' + x + '</span>'; }).join('') +
-      '</div></div>';
+    el.innerHTML = '<div style="display: flex; flex-direction: column; gap: 10px">' + fasesData.map(function (f, i) {
+      var a = S.fase === i;
+      var head = '<button type="button" data-act="fase" data-i="' + i + '" aria-expanded="' + a + '" style="width: 100%; font: inherit; color: #14201C; text-align: left; cursor: pointer; background: transparent; border: 0; display: flex; align-items: center; gap: 14px; padding: 14px 18px; min-height: 64px">' +
+        '<span style="width: 42px; height: 42px; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Sora, sans-serif; font-weight: 600; font-size: 14px; ' + (a ? 'background: #1E6F66; color: #FFFFFF;' : 'background: #E3F1EC; color: #1E6F66;') + '">' + pad(i + 1) + '</span>' +
+        '<span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-family: Sora, sans-serif; font-size: 17px; font-weight: 600">' + f.nome + '</span><span style="font-size: 13px; color: #55625D">' + f.idade + ' · ' + f.servico + '</span></span>' +
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; transition: transform .25s ease; transform: rotate(' + (a ? 180 : 0) + 'deg)"><path d="M6 9l6 6 6-6"/></svg></button>';
+      var body = a ? '<div style="padding: 0 18px 20px; display: flex; flex-wrap: wrap; gap: 18px 28px">' +
+        '<div style="flex: 999 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 12px">' +
+        '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(21px, 2.6vw, 28px); line-height: 1.2; letter-spacing: -0.02em">' + f.titulo + '</h3>' +
+        '<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">' + f.texto + '</p>' +
+        '<a href="' + wa(f.msg) + '" target="_blank" rel="noopener" class="btn" style="align-self: flex-start; text-decoration: none; background: #1E6F66; color: #FFFFFF; padding: 13px 22px; border-radius: 999px; font-weight: 700; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">' + f.cta + ' →</a></div>' +
+        '<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B7671">Fique de olho se</span>' +
+        f.sinais.map(function (x) { return '<span style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #34413C; background: #FBFAF7; border: 1px solid #EFEBE3; border-radius: 12px; padding: 9px 12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9A6B26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>' + x + '</span>'; }).join('') +
+        '</div></div>' : '';
+      return '<div style="background: #FFFFFF; border-radius: 22px; overflow: hidden; transition: box-shadow .25s ease; ' + (a ? 'border: 2px solid #1E6F66; box-shadow: 0 16px 36px rgba(30,111,102,.12);' : 'border: 1px solid #E6E1D6;') + '">' + head + body + '</div>';
+    }).join('') + '</div>';
   }
 
   var nomesNiv = ['Audição normal', 'Perda leve', 'Perda moderada', 'Perda severa'];
@@ -564,7 +563,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     else if (a === 'agendar') { S.etapa = 'agendar'; S.servico = nivel() === 2 ? 'Aparelho auditivo' : 'Avaliação auditiva / audiometria'; renderDiag(); }
     else if (a === 'verres') { S.etapa = 'resultado'; renderDiag(); }
     else if (a === 'refazer') { S.etapa = 'quiz'; S.idx = 0; S.resp = []; S.ouviu = []; S.fIdx = 0; renderDiag(); }
-    else if (a === 'fase') { S.fase = i; renderFases(); }
+    else if (a === 'fase') { S.fase = S.fase === i ? -1 : i; renderFases(); }
     else if (a === 'perda') { S.perda = i; renderSim(); }
     else if (a === 'mito') { S.virados[i] = !S.virados[i]; renderMitos(); }
   });
