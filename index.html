@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Laisa Lima | Fonoaudióloga em Itabirito — Exames, Laudos e Aparelhos Auditivos</title>
 <meta name="description" content="Fonoaudióloga Laisa Lima (CRFa 6-7563) em Itabirito/MG: Teste da Orelhinha, audiometria, laudos audiológicos e aparelhos auditivos. Faça o teste de audição gratuito e agende pelo WhatsApp.">
-<meta name="theme-color" content="#1E6F66">
+<meta name="theme-color" content="#0F3D38">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Laisa Lima | Fonoaudióloga em Itabirito">
 <meta property="og:description" content="Exames de audição, laudos e aparelhos auditivos. Faça o teste de audição gratuito.">
@@ -38,13 +38,89 @@ a{color:#1E6F66}a:hover{color:#14514A}
 .draw{stroke-dasharray:600;stroke-dashoffset:600;animation:dr 3s ease forwards infinite alternate}
 @keyframes dr{to{stroke-dashoffset:0}}
 input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
-.hero-avatar{display:none}
-@media (max-width: 760px){.navlinks{display:none !important}.hero-foto{display:none !important}.hero-avatar{display:flex !important}}
+@media (max-width: 760px){.navlinks{display:none !important}}
+/* ---- topo em tela cheia ---- */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 600px at 78% 40%,#1E6F66 0%,transparent 70%),#0F3D38;color:#FFFFFF;min-height:calc(100svh - 69px);display:flex;align-items:center;touch-action:pan-y}
+#ondas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-in{position:relative;width:100%;max-width:1240px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(16px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px);align-items:center;pointer-events:none}
+.hero-in a,.hero-in button{pointer-events:auto}
+.hero-txt{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.hero-chip{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#F2D49B;background:rgba(255,255,255,.07);border:1px solid rgba(242,212,155,.35);padding:9px 16px;border-radius:999px;backdrop-filter:blur(6px)}
+.hero h1{margin:0;font-family:Sora,sans-serif;font-weight:700;font-size:clamp(40px,5.4vw,78px);line-height:1;letter-spacing:-0.045em;max-width:16ch;text-wrap:balance}
+.hero p{margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#CFE3DD;max-width:600px}
+.hero p strong{color:#FFFFFF}
+.hero .rot{color:#F2D49B}
+.hero-tiles{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.tile-p,.tile-g{border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px;min-height:80px;box-sizing:border-box;backdrop-filter:blur(8px)}
+.tile-p{background:#F2D49B;color:#14201C}
+.tile-p:hover{color:#14201C;box-shadow:0 18px 40px rgba(242,212,155,.25)}
+.tile-g{background:rgba(255,255,255,.06);color:#FFFFFF;border:1px solid rgba(255,255,255,.16);transition:background .2s ease,border-color .2s ease,transform .18s ease}
+.tile-g:hover{color:#FFFFFF;background:rgba(255,255,255,.12);border-color:rgba(242,212,155,.6)}
+.hero-foto{position:relative;justify-self:center;width:100%;max-width:420px}
+.disco{position:relative;width:100%;aspect-ratio:1;border-radius:50%}
+.disco img{position:relative;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;border-radius:50%;border:6px solid rgba(255,255,255,.12);box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.onda-anel{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(242,212,155,.55);animation:oa 3.6s ease-out infinite;pointer-events:none}
+@keyframes oa{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.55);opacity:0}}
+.hero-selo{position:absolute;left:-6%;bottom:8%;display:flex;flex-direction:column;line-height:1.3;background:#FFFFFF;color:#14201C;border-radius:18px;padding:12px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);font-size:12px}
+.hero-selo strong{font-family:Sora,sans-serif;font-size:15px}
+.hero-selo span{color:#55625D}
+@media (max-width:860px){
+.hero{min-height:auto}
+.hero-in{grid-template-columns:1fr;gap:26px;padding-top:28px}
+.hero-foto{order:-1;justify-self:start;max-width:180px}
+.hero-selo{left:auto;right:-150px;bottom:30%;}
+.hero h1{max-width:none}
+}
+@media (max-width:420px){.hero-foto{max-width:150px}.hero-selo{right:-140px;padding:10px 14px}}
+@media (prefers-reduced-motion: reduce){.onda-anel{animation:none;opacity:0}}
 @media (prefers-reduced-motion: reduce){.eq,.marquee,.pulse,.ring,.sonar,.draw{animation:none}.draw{stroke-dashoffset:0}}
+.sim-range{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;--p:0%}
+.sim-range::-webkit-slider-runnable-track{height:10px;border-radius:10px;background:linear-gradient(90deg,#F2D49B var(--p),#2C3833 var(--p))}
+.sim-range::-moz-range-track{height:10px;border-radius:10px;background:#2C3833}
+.sim-range::-moz-range-progress{height:10px;border-radius:10px;background:#F2D49B}
+.sim-range::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;margin-top:-12px;border-radius:50%;background:#FFFFFF;border:6px solid #F2D49B;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.sim-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#FFFFFF;border:6px solid #F2D49B}
+.sim-range:focus-visible{outline:2px solid #F2D49B;outline-offset:4px;border-radius:8px}
+.sim-niv{font:inherit;font-size:13px;font-weight:600;color:#8E9B96;background:none;border:0;padding:8px 2px;min-height:44px;cursor:pointer;transition:color .2s ease}
+.sim-niv.on{color:#F2D49B}
+.sim-onda{position:absolute;left:0;right:0;bottom:0;height:46px;--corte:100%;background:repeating-linear-gradient(90deg,rgba(242,212,155,.28) 0 2px,transparent 2px 9px);-webkit-mask:linear-gradient(90deg,#000 0,#000 var(--corte),transparent var(--corte));mask:linear-gradient(90deg,#000 0,#000 var(--corte),transparent var(--corte));transition:none;pointer-events:none}
+/* ---- movimento ---- */
+#progresso{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#1E6F66,#C99A4E);z-index:40;pointer-events:none}
+header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
+.navlinks a{position:relative;transition:color .2s ease}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:#1E6F66;transform:scaleX(0);transition:transform .3s ease}
+.navlinks a:hover::after,.navlinks a.ativo::after{transform:scaleX(1)}
+.navlinks a.ativo{color:#1E6F66 !important}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.surge{animation:sg .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes sg{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.enter{animation:en .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes en{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.anel{transition:stroke-dasharray 1.2s cubic-bezier(.2,.7,.2,1)}
+.flutua{animation:fl 5s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.rot{display:inline-grid;justify-items:start;vertical-align:bottom;color:#1E6F66;font-weight:700;transition:width .45s ease}
+.rot>span{grid-area:1/1;white-space:nowrap;opacity:0;transform:translateY(60%);transition:opacity .5s ease,transform .5s ease}
+.rot>span.vis{opacity:1;transform:none}
+.rot>span.sai{opacity:0;transform:translateY(-60%)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#wa-flutua{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;text-decoration:none;background:#1E6F66;color:#FFFFFF;font-weight:700;font-size:15px;padding:0 20px 0 16px;height:58px;border-radius:999px;box-shadow:0 16px 36px rgba(20,32,28,.25);transform:translateY(120px);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
+#wa-flutua.vis{transform:none;opacity:1}
+#wa-flutua .halo{position:absolute;inset:0;border-radius:999px;border:2px solid #1E6F66;animation:sn 2.2s ease-out infinite;pointer-events:none}
+#wa-flutua:hover{color:#FFFFFF;background:#14514A}
+@media (max-width:760px){#wa-flutua .txt{display:none}#wa-flutua{width:58px;padding:0;justify-content:center}}
+.passo{transition:border-color .5s ease,box-shadow .5s ease,transform .5s ease}
+.passo .num{transition:color .5s ease}
+.passo.in{border-color:#1E6F66 !important;box-shadow:0 18px 40px rgba(30,111,102,.10)}
+.inclina{transition:transform .2s ease,box-shadow .25s ease;will-change:transform}
+@media (prefers-reduced-motion: reduce){.js .rv{opacity:1;transform:none;transition:none}.surge,.enter,.flutua,#wa-flutua .halo{animation:none}.anel{transition:none}.rot>span{transition:none}}
 </style>
+<script>if("IntersectionObserver" in window)document.documentElement.classList.add("js")</script>
 <style>html{scroll-behavior:smooth}*,*::before,*::after{box-sizing:border-box}h1,h2,h3,p{overflow-wrap:break-word}</style>
 </head>
 <body>
+<div id="progresso" aria-hidden="true"></div>
 <div style="font-family: Manrope, system-ui, sans-serif; color: #14201C; background: #FBFAF7; min-height: 100vh; overflow-x: hidden">
 
 <!-- HEADER -->
@@ -72,53 +148,40 @@ input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
 </header>
 
 <!-- HERO -->
-<section id="inicio" style="position: relative; background: radial-gradient(700px 480px at 92% 8%, #E3F1EC, transparent 70%), radial-gradient(600px 420px at 0% 100%, #F4EADB, transparent 70%)">
-<div aria-hidden="true" style="position: absolute; left: 80%; top: 45%; width: 0; height: 0; pointer-events: none">
-<span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(30,111,102,.22)"></span>
-<span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(30,111,102,.22); animation-delay: 1.7s"></span>
-<span class="ring" style="position: absolute; left: 0; top: 0; width: 720px; height: 720px; border-radius: 50%; border: 1.5px solid rgba(201,154,78,.3); animation-delay: 3.4s"></span>
-</div>
-<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(20px, 4vw, 40px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<section id="inicio" class="hero">
+<canvas id="ondas" aria-hidden="true"></canvas>
+<div class="hero-in">
 
-<div style="flex: 999 1 540px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 20px">
-<div class="hero-avatar" style="align-items: center; gap: 12px">
-<img src="img/laisa-avatar.jpg" alt="Fonoaudióloga Laisa Lima" width="64" height="64" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid #FFFFFF; box-shadow: 0 6px 18px rgba(20,32,28,.15)">
-<span style="display: flex; flex-direction: column; line-height: 1.25"><strong style="font-family: Sora, sans-serif; font-size: 17px">Laisa Lima</strong><span style="font-size: 13px; color: #55625D">Fonoaudióloga · Audiologia</span></span>
-</div>
-<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #1E6F66; background: #FFFFFF; border: 1px solid #D6E7E1; padding: 9px 16px; border-radius: 999px">
-<span style="position: relative; width: 8px; height: 8px"><span style="position: absolute; inset: 0; border-radius: 50%; background: #1E6F66"></span><span class="pulse" style="position: absolute; inset: 0; border-radius: 50%; background: #1E6F66"></span></span>
-Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
-<h1 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.035em">Exames de audição, laudos e <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66; letter-spacing: -0.01em">aparelhos auditivos</span> em Itabirito.</h1>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #45524D; max-width: 680px">A fonoaudióloga <strong style="color: #14201C">Laisa Lima</strong> cuida da audição de bebês, crianças, adultos e idosos: do Teste da Orelhinha à escolha e adaptação do aparelho auditivo.</p>
-
-<div style="width: 100%; text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px">
-<a href="#teste" class="btn" style="text-decoration: none; background: #1E6F66; color: #FFFFFF; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
-<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15c-1.5-1.2-2.5-3-2.5-5a7 7 0 0 1 14 0c0 3-2 4.2-3.2 5.3-1 .9-1.3 1.7-1.3 2.7a3 3 0 0 1-5.5 1.6"/><path d="M9 10a3 3 0 0 1 6 0"/></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Fazer o teste de audição</strong><span style="font-size: 13px; color: #D4EAE4">Grátis · menos de 1 minuto</span></span>
+<div class="hero-txt">
+<span class="hero-chip surge" style="--d: .05s"><span style="position: relative; width: 8px; height: 8px"><span style="position: absolute; inset: 0; border-radius: 50%; background: #F2D49B"></span><span class="pulse" style="position: absolute; inset: 0; border-radius: 50%; background: #F2D49B"></span></span>Fonoaudióloga, CRFa 6-7563, Itabirito/MG</span>
+<h1 class="surge" style="--d: .15s">Exames de audição, laudos e aparelhos auditivos em Itabirito.</h1>
+<p class="surge" style="--d: .3s">A fonoaudióloga <strong>Laisa Lima</strong> cuida da audição de <span class="sr">bebês, crianças, adultos e idosos</span><span class="rot" id="rot" aria-hidden="true"><span class="vis">bebês</span><span>crianças</span><span>adultos</span><span>idosos</span></span>: do Teste da Orelhinha à escolha e adaptação do aparelho auditivo.</p>
+<div class="hero-tiles surge" style="--d: .45s">
+<a href="#teste" class="btn tile-p" style="text-decoration: none; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
+<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(20,32,28,.10); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14201C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15c-1.5-1.2-2.5-3-2.5-5a7 7 0 0 1 14 0c0 3-2 4.2-3.2 5.3-1 .9-1.3 1.7-1.3 2.7a3 3 0 0 1-5.5 1.6"/><path d="M9 10a3 3 0 0 1 6 0"/></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Fazer o teste de audição</strong><span style="font-size: 13px; color: #4A3B1E">Grátis · cerca de 2 minutos</span></span>
 </a>
-<a href="https://wa.me/553135624303?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20%2F%20avalia%C3%A7%C3%A3o%20auditiva." target="_blank" rel="noopener" class="btn tile" style="text-decoration: none; background: #FFFFFF; color: #14201C; border: 1px solid #E6E1D6; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
-<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: #E3F1EC; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Agendar consulta</strong><span style="font-size: 13px; color: #55625D">Avaliação e aparelhos</span></span>
+<a href="https://wa.me/553135624303?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20%2F%20avalia%C3%A7%C3%A3o%20auditiva." target="_blank" rel="noopener" class="btn tile-g" style="text-decoration: none; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
+<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(255,255,255,.10); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2D49B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Agendar consulta</strong><span style="font-size: 13px; color: #B9D3CC">Avaliação e aparelhos</span></span>
 </a>
-<a href="https://wa.me/553135624303?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20exame%20%28audiometria%2C%20Teste%20da%20Orelhinha%20ou%20laudo%29." target="_blank" rel="noopener" class="btn tile" style="text-decoration: none; background: #FFFFFF; color: #14201C; border: 1px solid #E6E1D6; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
-<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: #E3F1EC; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10"/></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Agendar exame</strong><span style="font-size: 13px; color: #55625D">Audiometria · Orelhinha · Laudos</span></span>
+<a href="https://wa.me/553135624303?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20exame%20%28audiometria%2C%20Teste%20da%20Orelhinha%20ou%20laudo%29." target="_blank" rel="noopener" class="btn tile-g" style="text-decoration: none; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
+<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(255,255,255,.10); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2D49B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10"/></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Agendar exame</strong><span style="font-size: 13px; color: #B9D3CC">Audiometria · Orelhinha · Laudos</span></span>
 </a>
-<a href="https://www.google.com/maps/search/?api=1&amp;query=Hospital%20S%C3%A3o%20Vicente%20de%20Paulo%20Itabirito%20MG" target="_blank" rel="noopener" class="btn tile" style="text-decoration: none; background: #FFFFFF; color: #14201C; border: 1px solid #E6E1D6; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
-<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: #F4EADB; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A6B26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Onde fica o consultório</strong><span style="font-size: 13px; color: #55625D">Hospital São Vicente · Itabirito</span></span>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Hospital%20S%C3%A3o%20Vicente%20de%20Paulo%20Itabirito%20MG" target="_blank" rel="noopener" class="btn tile-g" style="text-decoration: none; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
+<span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(255,255,255,.10); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2D49B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 16px; font-weight: 700">Onde fica o consultório</strong><span style="font-size: 13px; color: #B9D3CC">Hospital São Vicente · Itabirito</span></span>
 </a>
 </div>
 </div>
 
-<div class="hero-foto" style="flex: 1 1 340px; min-width: 0; max-width: 440px; margin: 0 auto; position: relative">
-<div style="position: absolute; inset: 24px -16px -16px 24px; border-radius: 36px; background: #1E6F66; opacity: .12" aria-hidden="true"></div>
-<img src="img/laisa.jpg" alt="Fonoaudióloga Laisa Lima sorrindo, de jaleco" width="586" height="568" style="position: relative; display: block; width: 100%; height: auto; aspect-ratio: 586 / 568; object-fit: cover; border-radius: 32px; box-shadow: 0 30px 70px rgba(20,32,28,.14)">
-<div style="position: absolute; left: -18px; bottom: 28px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 18px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 14px 34px rgba(20,32,28,.12)">
-<span style="width: 40px; height: 40px; border-radius: 12px; background: #E3F1EC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-<span style="display: flex; flex-direction: column; line-height: 1.3"><strong style="font-family: Sora, sans-serif; font-size: 15px">Laisa Lima</strong><span style="font-size: 12px; color: #55625D">Fonoaudióloga · CRFa 6-7563</span></span>
+<div class="hero-foto surge" style="--d: .1s">
+<div class="disco" id="disco">
+<span class="onda-anel" aria-hidden="true"></span><span class="onda-anel" aria-hidden="true" style="animation-delay: 1.2s"></span><span class="onda-anel" aria-hidden="true" style="animation-delay: 2.4s"></span>
+<img id="foto-laisa" src="img/laisa.jpg" alt="Fonoaudióloga Laisa Lima sorrindo, de jaleco" width="586" height="568">
 </div>
-<div style="position: absolute; right: -10px; top: 26px; background: #1E6F66; color: #FFFFFF; border-radius: 16px; padding: 10px 14px; font-size: 13px; font-weight: 700; box-shadow: 0 14px 30px rgba(30,111,102,.3)">Audiologia e Saúde Coletiva</div>
+<div class="hero-selo flutua"><strong>Laisa Lima</strong><span>Audiologia e Saúde Coletiva</span></div>
 </div>
 
 </div>
@@ -130,7 +193,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <div style="position: relative; max-width: 980px; margin: 0 auto; padding: clamp(28px, 4vw, 48px) clamp(16px, 4vw, 48px) clamp(16px, 3vw, 32px); display: flex; flex-direction: column; gap: 22px">
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; color: #FFFFFF">
 <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #F2D49B"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Comece por aqui</span>
-<p style="margin: 0; font-family: Sora, sans-serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 500; line-height: 1.3; max-width: 640px">Descubra em 1 minuto se sua audição precisa de atenção.</p>
+<p style="margin: 0; font-family: Sora, sans-serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 500; line-height: 1.3; max-width: 640px">Descubra em 2 minutos se sua audição precisa de atenção.</p>
 </div>
 <div style="position: relative; overflow: hidden; background: #FFFFFF; border: 0; border-radius: 32px; padding: clamp(20px, 3.5vw, 36px); box-shadow: 0 0 0 8px rgba(255,255,255,.12), 0 40px 90px rgba(0,0,0,.25); display: flex; flex-direction: column; gap: 20px">
 <div aria-hidden="true" style="position: absolute; right: -120px; top: -120px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, #E3F1EC, transparent 70%); pointer-events: none"></div>
@@ -139,7 +202,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <div style="display: flex; flex-direction: column; gap: 10px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #FFFFFF; background: #1E6F66; padding: 7px 14px; border-radius: 999px">Diagnóstico auditivo gratuito</span>
 <h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -0.03em">Sua audição precisa <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">de atenção?</span></h2>
-<p style="margin: 0; font-size: 15px; color: #55625D">6 perguntas rápidas. Resultado na hora.</p>
+<p style="margin: 0; font-size: 15px; color: #55625D">6 perguntas e 6 sons. Resultado na hora.</p>
 </div>
 <div style="display: flex; align-items: flex-end; gap: 4px; height: 52px" aria-hidden="true">
 <span class="eq" style="display: block; width: 4px; height: 30%; border-radius: 3px; background: #C99A4E; opacity: 0.55; animation-delay: 0.00s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #1E6F66; opacity: 0.68; animation-delay: 0.07s;"></span><span class="eq" style="display: block; width: 4px; height: 80%; border-radius: 3px; background: #1E6F66; opacity: 0.80; animation-delay: 0.14s;"></span><span class="eq" style="display: block; width: 4px; height: 45%; border-radius: 3px; background: #1E6F66; opacity: 0.62; animation-delay: 0.21s;"></span><span class="eq" style="display: block; width: 4px; height: 95%; border-radius: 3px; background: #1E6F66; opacity: 0.88; animation-delay: 0.28s;"></span><span class="eq" style="display: block; width: 4px; height: 60%; border-radius: 3px; background: #C99A4E; opacity: 0.70; animation-delay: 0.35s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.42s;"></span><span class="eq" style="display: block; width: 4px; height: 70%; border-radius: 3px; background: #1E6F66; opacity: 0.75; animation-delay: 0.49s;"></span><span class="eq" style="display: block; width: 4px; height: 100%; border-radius: 3px; background: #1E6F66; opacity: 0.90; animation-delay: 0.56s;"></span><span class="eq" style="display: block; width: 4px; height: 50%; border-radius: 3px; background: #1E6F66; opacity: 0.65; animation-delay: 0.63s;"></span><span class="eq" style="display: block; width: 4px; height: 40%; border-radius: 3px; background: #C99A4E; opacity: 0.60; animation-delay: 0.70s;"></span><span class="eq" style="display: block; width: 4px; height: 85%; border-radius: 3px; background: #1E6F66; opacity: 0.82; animation-delay: 0.77s;"></span><span class="eq" style="display: block; width: 4px; height: 65%; border-radius: 3px; background: #1E6F66; opacity: 0.73; animation-delay: 0.84s;"></span><span class="eq" style="display: block; width: 4px; height: 30%; border-radius: 3px; background: #1E6F66; opacity: 0.55; animation-delay: 0.91s;"></span><span class="eq" style="display: block; width: 4px; height: 75%; border-radius: 3px; background: #1E6F66; opacity: 0.78; animation-delay: 0.98s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #C99A4E; opacity: 0.68; animation-delay: 1.05s;"></span><span class="eq" style="display: block; width: 4px; height: 90%; border-radius: 3px; background: #1E6F66; opacity: 0.85; animation-delay: 1.12s;"></span><span class="eq" style="display: block; width: 4px; height: 45%; border-radius: 3px; background: #1E6F66; opacity: 0.62; animation-delay: 1.19s;"></span><span class="eq" style="display: block; width: 4px; height: 60%; border-radius: 3px; background: #1E6F66; opacity: 0.70; animation-delay: 0.06s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.13s;"></span><span class="eq" style="display: block; width: 4px; height: 80%; border-radius: 3px; background: #C99A4E; opacity: 0.80; animation-delay: 0.20s;"></span><span class="eq" style="display: block; width: 4px; height: 50%; border-radius: 3px; background: #1E6F66; opacity: 0.65; animation-delay: 0.27s;"></span><span class="eq" style="display: block; width: 4px; height: 70%; border-radius: 3px; background: #1E6F66; opacity: 0.75; animation-delay: 0.34s;"></span><span class="eq" style="display: block; width: 4px; height: 40%; border-radius: 3px; background: #1E6F66; opacity: 0.60; animation-delay: 0.41s;"></span><span class="eq" style="display: block; width: 4px; height: 95%; border-radius: 3px; background: #1E6F66; opacity: 0.88; animation-delay: 0.48s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #C99A4E; opacity: 0.68; animation-delay: 0.55s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.62s;"></span><span class="eq" style="display: block; width: 4px; height: 65%; border-radius: 3px; background: #1E6F66; opacity: 0.73; animation-delay: 0.69s;"></span>
@@ -158,7 +221,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <span style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A6B26">Audição em cada fase da vida</span>
 <h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Toque em uma fase e veja <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">como a Laisa ajuda.</span></h2>
 </div>
-<div id="fases" style="display: flex; flex-direction: column; gap: 24px"></div>
+<div id="fases-lista" style="display: flex; flex-direction: column; gap: 24px"></div>
 </section>
 
 <!-- SIMULADOR -->
@@ -168,7 +231,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <div style="position: relative; display: flex; flex-direction: column; gap: 12px; max-width: 760px">
 <span style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #F2D49B">Simulador · ouça com os olhos</span>
 <h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.03em">Como uma perda auditiva <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #F2D49B">apaga as palavras.</span></h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B9C6C1">Na perda auditiva, os sons agudos costumam sumir primeiro, e com eles letras como S, F e T. Escolha um nível e veja a frase mudar.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B9C6C1">Na perda auditiva, os sons agudos costumam sumir primeiro, e com eles letras como S, F e T. Arraste o controle e veja a frase se apagar.</p>
 </div>
 <div id="sim" style="position: relative"></div>
 <p style="position: relative; margin: 0; font-size: 12px; color: #8E9B96">Ilustração educativa. Cada perda auditiva é diferente e só a avaliação mostra como você ouve.</p>
@@ -193,7 +256,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 </div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px">
-<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para recém-nascidos</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Teste da Orelhinha</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Triagem auditiva neonatal por Emissões Otoacústicas. Rápido, indolor e feito com o bebê dormindo, de preferência nos primeiros dias de vida.</p>
@@ -203,7 +266,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 </ul>
 </article>
 
-<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para todas as idades</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Audiometria</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Audiometria tonal e vocal em cabine acústica. Mede quanto e como você ouve e é a base para identificar a perda auditiva.</p>
@@ -215,7 +278,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 </svg>
 </article>
 
-<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para pessoas e empresas</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Laudos audiológicos</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Laudos para admissional, periódico e demissional, PCMSO, concursos e processos que exigem comprovação da condição auditiva.</p>
@@ -259,7 +322,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 </div>
 <span id="mitos-count" style="font-size: 14px; color: #55625D"></span>
 </div>
-<div id="mitos" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px"></div>
+<div id="mitos-lista" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px"></div>
 </section>
 
 <!-- COMO FUNCIONA -->
@@ -269,23 +332,23 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 <h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Quatro passos até <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">ouvir melhor.</span></h2>
 </div>
 <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px">
-<li style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">01</span>
+<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">01</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Avaliação</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Conversa sobre sua rotina e exame completo para entender o tipo e o grau da perda.</p>
 </li>
-<li style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">02</span>
+<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">02</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Escolha</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Indicação dos modelos certos, com explicação clara de tecnologia, conforto e investimento.</p>
 </li>
-<li style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">03</span>
+<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">03</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Adaptação</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Regulagem fina do aparelho e orientação de uso, limpeza e cuidados.</p>
 </li>
-<li style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">04</span>
+<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">04</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Acompanhamento</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Retornos para ajustes e manutenção, acompanhando sua evolução.</p>
 </li>
@@ -357,6 +420,8 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 </div>
 </footer>
 
+<a id="wa-flutua" href="https://wa.me/553135624303?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp" tabindex="-1"><span class="halo" aria-hidden="true"></span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.8 7L4 20l1.1-4A8 8 0 1 1 20 12z"/></svg><span class="txt">Agendar</span></a>
+
 </div>
 <script>
 (function () {
@@ -412,13 +477,13 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
 
   function renderDiag() {
     var el = document.getElementById('diag'); if (!el) return;
-    var ordem = ['quiz', 'resultado', 'agendar'], at = ordem.indexOf(S.etapa);
-    var h = '<div style="position: relative; display: flex; align-items: center; gap: 8px">' + ['Perguntas', 'Resultado', 'Agendar'].map(function (n, i) {
+    var ordem = ['quiz', 'sons', 'resultado', 'agendar'], at = ordem.indexOf(S.etapa);
+    var h = '<div style="position: relative; display: flex; align-items: center; gap: 8px">' + ['Perguntas', 'Sons', 'Resultado', 'Agendar'].map(function (n, i) {
       return '<div style="flex: 1; display: flex; flex-direction: column; gap: 8px"><div style="height: 5px; border-radius: 5px; background: ' + (i <= at ? '#1E6F66' : '#E6E1D6') + '"></div><span style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: ' + (i <= at ? '#14201C' : '#6B7671') + '">' + n + '</span></div>';
     }).join('') + '</div>';
 
     if (S.etapa === 'quiz') {
-      h += '<div style="position: relative; display: flex; flex-direction: column; gap: 20px">' +
+      h += '<div class="enter" style="position: relative; display: flex; flex-direction: column; gap: 20px">' +
         '<div style="display: flex; align-items: baseline; gap: 14px"><span style="' + IS + '; font-size: 44px; line-height: 1; color: #1E6F66">' + pad(S.idx + 1) + '</span><span style="font-family: Sora, sans-serif; font-size: 14px; color: #6B7671">de 06</span></div>' +
         '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 500; font-size: clamp(22px, 3vw, 32px); line-height: 1.3; letter-spacing: -0.015em; min-height: 2.6em">' + perguntas[S.idx] + '</h3>' +
         '<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">' +
@@ -426,10 +491,10 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
         '<button type="button" class="ghost" data-act="nao" style="' + BTN_G + ' font-size: 20px; min-height: 76px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Não</button></div>' +
         '<div style="display: flex; justify-content: space-between; align-items: center; min-height: 44px">' +
         (S.idx > 0 ? '<button type="button" data-act="voltar" style="' + LINK + ' padding: 10px 0">← Voltar</button>' : '') +
-        '<span style="margin-left: auto; font-size: 13px; color: #6B7671">Leva menos de 1 minuto</span></div></div>';
+        '<span style="margin-left: auto; font-size: 13px; color: #6B7671">Depois, 6 sons rápidos</span></div></div>';
     } else if (S.etapa === 'sons') {
       var f = freqs[S.fIdx];
-      h += '<div style="position: relative; display: flex; flex-direction: column; gap: 22px">' +
+      h += '<div class="enter" style="position: relative; display: flex; flex-direction: column; gap: 22px">' +
         '<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px"><span style="display: flex; align-items: baseline; gap: 12px"><span style="' + IS + '; font-size: 44px; line-height: 1; color: #1E6F66">' + pad(S.fIdx + 1) + '</span><span style="font-family: Sora, sans-serif; font-size: 14px; color: #6B7671">de 06 sons</span></span>' +
         '<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #34413C; background: #F2EFE8; padding: 8px 14px; border-radius: 999px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E6F66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><rect x="2" y="15" width="5" height="6" rx="2"/><rect x="17" y="15" width="5" height="6" rx="2"/></svg>Use fones · volume médio</span></div>' +
         '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 500; font-size: clamp(22px, 3vw, 32px); line-height: 1.25; letter-spacing: -0.015em">Toque no play. <span style="' + IS + '; font-weight: 400; color: #1E6F66">Você ouve este som?</span></h3>' +
@@ -445,9 +510,9 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
         '<button type="button" data-act="pular" style="' + LINK + ' align-self: center; text-decoration: underline">Estou sem fone · pular esta etapa</button></div>';
     } else if (S.etapa === 'resultado') {
       var r = resultado(), fez = S.ouviu.length > 0;
-      h += '<div style="position: relative; display: flex; flex-direction: column; gap: 18px">' +
+      h += '<div class="enter" style="position: relative; display: flex; flex-direction: column; gap: 18px">' +
         '<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">' +
-        '<div style="position: relative; width: 150px; height: 150px; flex: none"><svg width="150" height="150" viewBox="0 0 150 150" role="img" aria-label="' + sins() + ' de 6 sinais"><circle cx="75" cy="75" r="62" fill="none" stroke="#EDE9E0" stroke-width="10"/><circle cx="75" cy="75" r="62" fill="none" stroke="' + r.cor + '" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + r.dash + '" transform="rotate(-90 75 75)"/></svg>' +
+        '<div style="position: relative; width: 150px; height: 150px; flex: none"><svg width="150" height="150" viewBox="0 0 150 150" role="img" aria-label="' + sins() + ' de 6 sinais"><circle cx="75" cy="75" r="62" fill="none" stroke="#EDE9E0" stroke-width="10"/><circle cx="75" cy="75" r="62" fill="none" stroke="' + r.cor + '" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 999" data-dash="' + r.dash + '" class="anel" transform="rotate(-90 75 75)"/></svg>' +
         '<span style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center"><span style="font-family: Sora, sans-serif; font-weight: 600; font-size: 38px; line-height: 1">' + sins() + '</span><span style="font-size: 12px; color: #55625D; margin-top: 4px">de 6 sinais</span></span></div>' +
         '<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px"><span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #FFFFFF; background: ' + r.cor + '; padding: 7px 14px; border-radius: 999px">' + r.selo + '</span>' +
         '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; letter-spacing: -0.02em">' + r.titulo + '</h3>' +
@@ -459,7 +524,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     } else {
       var opts = ['Avaliação auditiva / audiometria', 'Aparelho auditivo', 'Teste da Orelhinha', 'Laudo audiológico'];
       var FIELD = 'font: inherit; font-weight: 400; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid #D9D3C6; background: #FBFAF7; color: #14201C; min-height: 54px; box-sizing: border-box';
-      h += '<div style="position: relative; display: flex; flex-direction: column; gap: 16px">' +
+      h += '<div class="enter" style="position: relative; display: flex; flex-direction: column; gap: 16px">' +
         '<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #1E6F66">Último passo</span>' +
         '<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; line-height: 1.25">Como podemos te chamar?</h3>' +
         '<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; color: #34413C">Seu nome<input id="f-nome" type="text" autocomplete="name" placeholder="Nome completo" value="' + esc(S.nome) + '" style="' + FIELD + '"></label>' +
@@ -468,7 +533,13 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
         '<button type="button" data-act="verres" style="' + LINK + '">← Ver meu resultado</button></div>';
     }
     el.innerHTML = h;
+    var chave = S.etapa + S.idx + '-' + S.fIdx, en = el.querySelector('.enter');
+    if (en && chave === ultimaChave) en.classList.remove('enter');
+    ultimaChave = chave;
+    var an = el.querySelector('.anel');
+    if (an) requestAnimationFrame(function () { requestAnimationFrame(function () { an.style.strokeDasharray = an.getAttribute('data-dash'); }); });
   }
+  var ultimaChave = '';
 
   var fasesData = [
     { nome: 'Bebê', idade: 'Primeiros dias de vida', servico: 'Teste da Orelhinha', titulo: 'Os primeiros dias contam muito', texto: 'O Teste da Orelhinha é obrigatório por lei para recém-nascidos no Brasil. É rápido, indolor e feito com o bebê dormindo, de preferência ainda no primeiro mês.', cta: 'Agendar Teste da Orelhinha', msg: 'Olá! Gostaria de agendar o Teste da Orelhinha para meu bebê.', sinais: ['Bebê não se assusta com barulhos fortes', 'Não vira a cabeça na direção da voz', 'Histórico de perda auditiva na família'] },
@@ -477,7 +548,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     { nome: 'Maturidade', idade: 'A partir dos 50+', servico: 'Aparelhos auditivos', titulo: 'Voltar a participar das conversas', texto: 'A perda auditiva costuma chegar devagar. Um aparelho bem indicado e bem adaptado devolve a clareza das conversas em família e no dia a dia.', cta: 'Quero conhecer os aparelhos', msg: 'Olá! Gostaria de saber mais sobre aparelhos auditivos.', sinais: ['Conversas em grupo ficaram difíceis', 'Família reclama do volume da TV', 'Entende, mas não com clareza'] }
   ];
   function renderFases() {
-    var el = document.getElementById('fases'); if (!el) return;
+    var el = document.getElementById('fases-lista'); if (!el) return;
     el.innerHTML = '<div style="display: flex; flex-direction: column; gap: 10px">' + fasesData.map(function (f, i) {
       var a = S.fase === i;
       var head = '<button type="button" data-act="fase" data-i="' + i + '" aria-expanded="' + a + '" style="width: 100%; font: inherit; color: #14201C; text-align: left; cursor: pointer; background: transparent; border: 0; display: flex; align-items: center; gap: 14px; padding: 14px 18px; min-height: 64px">' +
@@ -503,26 +574,55 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     'Mais consoantes desaparecem. A fala soa abafada e conversas em grupo cansam.',
     'Restam apenas fragmentos. Sem ajuda, acompanhar uma conversa fica muito difícil.'
   ];
+  var FRASE = 'Você vai buscar as crianças na escola às seis?';
+  function estiloLetra(l, p) {
+    var g1 = 'sfxzç', g2 = 'tpckhqv', vog = 'aeiouáàâãéêíóôõú';
+    if (g1.indexOf(l) >= 0 && p >= 1) return p === 1 ? [0.22, 2] : [0.06, 1 + p];
+    if (g2.indexOf(l) >= 0 && p >= 2) return p === 2 ? [0.25, 4] : [0.08, 5];
+    if (vog.indexOf(l) < 0 && /[a-zçã]/.test(l) && p >= 3) return [0.15, 4];
+    if (vog.indexOf(l) >= 0 && p >= 3) return [0.55, 1.5];
+    if (p >= 2) return [0.8, 0.6];
+    return [1, 0];
+  }
+  function aplicaSim(v) {
+    var el = document.getElementById('sim'); if (!el) return;
+    var a = Math.floor(v), b = Math.min(3, a + 1), f = v - a;
+    el.querySelectorAll('[data-l]').forEach(function (sp) {
+      var l = sp.getAttribute('data-l'), A = estiloLetra(l, a), B = estiloLetra(l, b);
+      sp.style.opacity = (A[0] + (B[0] - A[0]) * f).toFixed(3);
+      sp.style.filter = 'blur(' + (A[1] + (B[1] - A[1]) * f).toFixed(2) + 'px)';
+    });
+    var n = Math.round(v);
+    var txt = document.getElementById('sim-txt'); if (txt && S.perda !== n) txt.textContent = textosNiv[n];
+    S.perda = n;
+    el.querySelectorAll('[data-act="perda"]').forEach(function (bt, i) { bt.setAttribute('aria-pressed', i === n); bt.classList.toggle('on', i === n); });
+    var r = document.getElementById('sim-range'); if (r) { r.style.setProperty('--p', (v / 3 * 100).toFixed(1) + '%'); r.setAttribute('aria-valuetext', nomesNiv[n]); }
+    var on = document.getElementById('sim-onda'); if (on) on.style.setProperty('--corte', (100 - v / 3 * 70).toFixed(1) + '%');
+  }
   function renderSim() {
     var el = document.getElementById('sim'); if (!el) return;
-    var p = S.perda, frase = 'Você vai buscar as crianças na escola às seis?', g1 = 'sfxzç', g2 = 'tpckhqv', vog = 'aeiouáàâãéêíóôõú';
-    var letras = frase.split('').map(function (ch) {
-      var l = ch.toLowerCase(), op = 1, bl = 0;
+    var letras = FRASE.split('').map(function (ch) {
       if (ch === ' ') return ' ';
-      if (g1.indexOf(l) >= 0 && p >= 1) { op = p === 1 ? 0.22 : 0.06; bl = 1 + p; }
-      else if (g2.indexOf(l) >= 0 && p >= 2) { op = p === 2 ? 0.25 : 0.08; bl = 2 + p; }
-      else if (vog.indexOf(l) < 0 && /[a-zçã]/.test(l) && p >= 3) { op = 0.15; bl = 4; }
-      else if (vog.indexOf(l) >= 0 && p >= 3) { op = 0.55; bl = 1.5; }
-      else if (p >= 2) { op = 0.8; bl = 0.6; }
-      return '<span style="display: inline-block; transition: opacity .5s ease, filter .5s ease; opacity: ' + op + '; filter: blur(' + bl + 'px)">' + ch + '</span>';
+      return '<span data-l="' + ch.toLowerCase() + '" style="display: inline-block; transition: opacity .25s ease, filter .25s ease">' + ch + '</span>';
     }).join('');
-    el.innerHTML = '<div role="group" aria-label="Nível de perda auditiva" style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 8px">' +
-      nomesNiv.map(function (n, i) {
-        return '<button type="button" data-act="perda" data-i="' + i + '" aria-pressed="' + (p === i) + '" style="font: inherit; font-weight: 700; font-size: 15px; min-height: 52px; border-radius: 16px; cursor: pointer; transition: all .2s ease; ' + (p === i ? 'background: #F2D49B; color: #14201C; border: 1px solid #F2D49B;' : 'background: transparent; color: #FFFFFF; border: 1px solid #3A4741;') + '">' + n + '</button>';
-      }).join('') + '</div>' +
-      '<div style="position: relative; margin-top: 20px; background: rgba(255,255,255,.04); border: 1px solid #2C3833; border-radius: 24px; padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 18px">' +
-      '<p aria-label="' + frase + '" style="margin: 0; font-family: Sora, sans-serif; font-weight: 500; font-size: clamp(26px, 4.4vw, 54px); line-height: 1.2; letter-spacing: -0.02em">' + letras + '</p>' +
-      '<p aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.6; color: #B9C6C1">' + textosNiv[p] + '</p></div>';
+    el.innerHTML =
+      '<div style="position: relative; display: flex; flex-direction: column; gap: 14px">' +
+      '<label for="sim-range" style="font-size: 15px; font-weight: 600; color: #FFFFFF">Arraste para aumentar a perda auditiva</label>' +
+      '<input id="sim-range" class="sim-range" type="range" min="0" max="3" step="0.01" value="0" aria-valuetext="' + nomesNiv[0] + '">' +
+      '<div role="group" aria-label="Ir para um nível" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">' +
+      nomesNiv.map(function (n, i) { return '<button type="button" class="sim-niv" data-act="perda" data-i="' + i + '" aria-pressed="' + (i === 0) + '" style="text-align: ' + (i === 0 ? 'left' : i === 3 ? 'right' : 'center') + '">' + n + '</button>'; }).join('') +
+      '</div></div>' +
+      '<div style="position: relative; margin-top: 20px; background: rgba(255,255,255,.04); border: 1px solid #2C3833; border-radius: 24px; padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 32px) 66px; display: flex; flex-direction: column; gap: 18px; overflow: hidden">' +
+      '<div id="sim-onda" class="sim-onda" aria-hidden="true"></div>' +
+      '<p aria-label="' + FRASE + '" style="position: relative; margin: 0; font-family: Sora, sans-serif; font-weight: 500; font-size: clamp(26px, 4.4vw, 54px); line-height: 1.2; letter-spacing: -0.02em">' + letras + '</p>' +
+      '<p id="sim-txt" aria-live="polite" style="position: relative; margin: 0; font-size: 15px; line-height: 1.6; color: #B9C6C1">' + textosNiv[0] + '</p></div>';
+    S.perda = -1; aplicaSim(0);
+  }
+  var animSim = null;
+  function irPara(alvo) {
+    var r = document.getElementById('sim-range'); if (!r) return;
+    var de = +r.value, t0 = null; cancelAnimationFrame(animSim);
+    (function passo(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 600), e = 1 - Math.pow(1 - k, 3), v = de + (alvo - de) * e; r.value = v; aplicaSim(v); if (k < 1) animSim = requestAnimationFrame(passo); })(performance.now());
   }
 
   var mitosData = [
@@ -532,7 +632,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     { frase: 'Se o bebê reage a barulhos, não precisa do Teste da Orelhinha.', verdade: false, explica: 'O teste é obrigatório por lei e identifica alterações que não aparecem só observando o bebê.' }
   ];
   function renderMitos() {
-    var el = document.getElementById('mitos'); if (!el) return;
+    var el = document.getElementById('mitos-lista'); if (!el) return;
     el.innerHTML = mitosData.map(function (m, i) {
       var ab = !!S.virados[i], cor = m.verdade ? '#1E6F66' : '#B04A30';
       var st = 'font: inherit; text-align: left; cursor: pointer; min-height: 190px; border-radius: 26px; padding: 20px; display: flex; flex-direction: column; gap: 14px; transition: background .35s ease, color .35s ease, transform .35s ease; ' + (ab ? 'background: ' + cor + '; color: #FFFFFF; border: 1px solid ' + cor + '; transform: rotate(-1deg);' : 'background: #FFFFFF; color: #14201C; border: 1px solid #E6E1D6;');
@@ -566,7 +666,7 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     var a = b.getAttribute('data-act'), i = +b.getAttribute('data-i');
     if (a === 'sim' || a === 'nao') {
       S.resp = S.resp.slice(0, S.idx); S.resp[S.idx] = a === 'sim';
-      if (S.idx >= perguntas.length - 1) { S.etapa = 'resultado'; S.ouviu = []; } else S.idx++;
+      if (S.idx >= perguntas.length - 1) { S.etapa = 'sons'; S.fIdx = 0; S.ouviu = []; } else S.idx++;
       renderDiag();
     } else if (a === 'voltar') { S.idx = Math.max(0, S.idx - 1); renderDiag(); }
     else if (a === 'tocar') tocar();
@@ -579,10 +679,11 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
     else if (a === 'verres') { S.etapa = 'resultado'; renderDiag(); }
     else if (a === 'refazer') { S.etapa = 'quiz'; S.idx = 0; S.resp = []; S.ouviu = []; S.fIdx = 0; renderDiag(); }
     else if (a === 'fase') { S.fase = S.fase === i ? -1 : i; renderFases(); }
-    else if (a === 'perda') { S.perda = i; renderSim(); }
+    else if (a === 'perda') { irPara(i); }
     else if (a === 'mito') { S.virados[i] = !S.virados[i]; renderMitos(); }
   });
   document.addEventListener('input', function (e) {
+    if (e.target.id === 'sim-range') { cancelAnimationFrame(animSim); aplicaSim(+e.target.value); return; }
     if (e.target.id === 'f-nome') { S.nome = e.target.value; var l = document.getElementById('f-wa'); if (l) l.href = waAgenda(); }
   });
   document.addEventListener('change', function (e) {
@@ -590,6 +691,147 @@ Fonoaudióloga · CRFa 6-7563 · Itabirito/MG</span>
   });
 
   renderDiag(); renderFases(); renderSim(); renderMitos();
+
+  /* ---------- movimento ---------- */
+  var reduz = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  // ondas sonoras do topo: reagem ao mouse/toque e pulsam a partir da foto
+  (function () {
+    var cv = document.getElementById('ondas'), sec = document.getElementById('inicio'), disco = document.getElementById('disco');
+    if (!cv || !cv.getContext) return;
+    var cx = cv.getContext('2d'), W = 0, H = 0, dpr = 1, t = 0, vivo = true, ultimo = 0;
+    var mira = { x: -999, y: -999, f: 0 }, alvo = { x: -999, y: -999, f: 0 }, pulsos = [];
+    function mede() {
+      var r = sec.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function origem() {
+      if (!disco) return { x: W * .75, y: H * .5 };
+      var a = disco.getBoundingClientRect(), b = sec.getBoundingClientRect();
+      return { x: a.left - b.left + a.width / 2, y: a.top - b.top + a.height / 2 };
+    }
+    function pulso(x, y, forca) { pulsos.push({ x: x, y: y, r: 0, f: forca || 1 }); if (pulsos.length > 8) pulsos.shift(); }
+    function desenha() {
+      cx.clearRect(0, 0, W, H);
+      mira.x += (alvo.x - mira.x) * .12; mira.y += (alvo.y - mira.y) * .12; mira.f += (alvo.f - mira.f) * .06;
+      var n = Math.max(14, Math.round(H / 34)), gap = H / (n + 1), passo = W < 600 ? 8 : 10, R = Math.max(140, Math.min(W, H) * .32);
+      for (var i = 1; i <= n; i++) {
+        var y0 = i * gap, ouro = i % 5 === 0;
+        cx.beginPath();
+        for (var x = -10; x <= W + 10; x += passo) {
+          var A = 3 + 2 * Math.sin(i * 1.7 + t * .4);
+          var dx = x - mira.x, dy = y0 - mira.y, d2 = dx * dx + dy * dy;
+          A += mira.f * 34 * Math.exp(-d2 / (R * R * .5));
+          for (var k = 0; k < pulsos.length; k++) {
+            var P = pulsos[k], dd = Math.sqrt((x - P.x) * (x - P.x) + (y0 - P.y) * (y0 - P.y)), w = dd - P.r;
+            if (w > -70 && w < 70) A += P.f * 26 * Math.exp(-(w * w) / 900) * Math.max(0, 1 - P.r / (Math.max(W, H) * .9));
+          }
+          var yy = y0 + A * Math.sin(x * .018 + t * 1.6 + i * .55);
+          if (x === -10) cx.moveTo(x, yy); else cx.lineTo(x, yy);
+        }
+        cx.strokeStyle = ouro ? 'rgba(242,212,155,.42)' : 'rgba(255,255,255,' + (0.07 + 0.05 * Math.sin(i)) .toFixed(3) + ')';
+        cx.lineWidth = ouro ? 1.4 : 1;
+        cx.stroke();
+      }
+      for (var q = pulsos.length - 1; q >= 0; q--) { pulsos[q].r += 5.5; if (pulsos[q].r > Math.max(W, H) * 1.1) pulsos.splice(q, 1); }
+    }
+    function laco(ts) {
+      if (!vivo) return;
+      var dt = Math.min(50, ts - (ultimo || ts)); ultimo = ts; t += dt / 1000;
+      if (Math.floor(t / 3.2) !== Math.floor((t - dt / 1000) / 3.2)) { var o = origem(); pulso(o.x, o.y, .8); }
+      desenha(); requestAnimationFrame(laco);
+    }
+    function pos(e) { var b = sec.getBoundingClientRect(); return { x: e.clientX - b.left, y: e.clientY - b.top }; }
+    sec.addEventListener('pointermove', function (e) { var p = pos(e); alvo.x = p.x; alvo.y = p.y; alvo.f = 1; });
+    sec.addEventListener('pointerleave', function () { alvo.f = 0; });
+    sec.addEventListener('pointerdown', function (e) { var p = pos(e); pulso(p.x, p.y, 1.3); if (e.pointerType !== 'mouse') { alvo.x = mira.x = p.x; alvo.y = mira.y = p.y; alvo.f = 1; setTimeout(function () { alvo.f = 0; }, 900); } });
+    mede(); addEventListener('resize', mede);
+    if (reduz) { desenha(); return; }
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { var v = es[0].isIntersecting; if (v && !vivo) { vivo = true; ultimo = 0; requestAnimationFrame(laco); } vivo = v; }).observe(sec);
+    var o0 = origem(); pulso(o0.x, o0.y, 1);
+    requestAnimationFrame(laco);
+  })();
+
+  // palavra que alterna no topo
+  var rot = document.getElementById('rot');
+  if (rot) {
+    var rs = rot.children, ri = 0;
+    var ajusta = function () { rot.style.width = rs[ri].offsetWidth + 'px'; };
+    ajusta(); addEventListener('resize', ajusta);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajusta);
+    if (!reduz) setInterval(function () {
+      var a = rs[ri]; a.classList.remove('vis'); a.classList.add('sai');
+      ri = (ri + 1) % rs.length; rs[ri].classList.remove('sai'); rs[ri].classList.add('vis'); ajusta();
+      setTimeout(function () { a.classList.remove('sai'); }, 520);
+    }, 2300);
+  }
+
+  // elementos surgem ao rolar
+  if ('IntersectionObserver' in window) {
+    var sels = ['#teste > div > div', '#fases > div', '#simulador > div', '#servicos > div:first-child', '#servicos article', '#aparelhos > div', '#aparelhos > div > div:last-child > div', '#mitos > div', '#como > div', '#como li', '#local > div > *', 'footer'];
+    var fp = document.querySelector('footer'), ctaFinal = fp ? fp.previousElementSibling : null;
+    if (ctaFinal) ctaFinal.firstElementChild.setAttribute('data-rv', '');
+    var lista = [];
+    sels.forEach(function (s) { document.querySelectorAll(s).forEach(function (el) { lista.push(el); }); });
+    document.querySelectorAll('[data-rv]').forEach(function (el) { lista.push(el); });
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target; el.classList.add('in'); io.unobserve(el);
+        var d = parseFloat(el.style.getPropertyValue('--d')) || 0;
+        setTimeout(function () { el.classList.remove('rv'); }, (d + 0.9) * 1000);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    lista.forEach(function (el) {
+      var irmaos = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.classList.add('rv');
+      if (irmaos > 0 && el.parentNode.children.length > 2) el.style.setProperty('--d', Math.min(irmaos, 5) * 0.1 + 's');
+      io.observe(el);
+    });
+
+    // menu marca a seção atual
+    var links = {};
+    document.querySelectorAll('.navlinks a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var ioNav = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        var l = links[en.target.id]; if (!l) return;
+        if (en.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.remove('ativo'); }); l.classList.add('ativo'); }
+        else l.classList.remove('ativo');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(links).forEach(function (k) { var s = document.getElementById(k); if (s) ioNav.observe(s); });
+  }
+
+  // cards de serviço inclinam com o mouse
+  if (!reduz && window.matchMedia && matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.inclina').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        if (c.classList.contains('rv')) return;
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        c.style.transform = 'perspective(900px) rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 6).toFixed(2) + 'deg) translateY(-4px)';
+      });
+      c.addEventListener('pointerleave', function () { c.style.transform = ''; });
+    });
+  }
+
+  // barra de progresso, cabeçalho, foto e botão flutuante
+  var barra = document.getElementById('progresso'), cab = document.querySelector('header'), waf = document.getElementById('wa-flutua');
+  var hero = document.getElementById('inicio'), teste = document.getElementById('teste'), foto = document.getElementById('foto-laisa');
+  var rodape = document.querySelector('footer'), fim = rodape ? rodape.previousElementSibling : null, pend = false;
+  function aoRolar() {
+    pend = false;
+    var y = window.scrollY || 0, max = document.documentElement.scrollHeight - innerHeight, H = innerHeight;
+    if (barra) barra.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    if (cab) cab.classList.toggle('rolou', y > 8);
+    if (waf) {
+      var t = teste ? teste.getBoundingClientRect() : null, f = fim ? fim.getBoundingClientRect() : null;
+      var mostra = hero && y > hero.offsetHeight * 0.7 && !(t && t.top < H - 90 && t.bottom > H - 10) && !(f && f.top < H);
+      waf.classList.toggle('vis', !!mostra); waf.tabIndex = mostra ? 0 : -1;
+    }
+  }
+  addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(aoRolar); } }, { passive: true });
+  addEventListener('resize', aoRolar);
+  aoRolar();
 })();
 </script>
 </body>
