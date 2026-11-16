@@ -25,10 +25,6 @@ a{color:#1E6F66}a:hover{color:#14514A}
 .card{transition:transform .25s ease, box-shadow .25s ease}
 .card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(20,32,28,.08)}
 .row:hover{background:#F6F4EF}
-.eq{transform-origin:bottom;animation:eq 1.2s ease-in-out infinite}
-@keyframes eq{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
-.marquee{animation:mq 32s linear infinite}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .pulse{animation:pl 2.4s ease-out infinite}
 @keyframes pl{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.8);opacity:0}}
 .ring{animation:rg 5s ease-out infinite}
@@ -49,7 +45,6 @@ input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
 .hero h1{margin:0;font-family:Sora,sans-serif;font-weight:700;font-size:clamp(40px,5.4vw,78px);line-height:1;letter-spacing:-0.045em;max-width:16ch;text-wrap:balance}
 .hero p{margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#CFE3DD;max-width:600px}
 .hero p strong{color:#FFFFFF}
-.hero .rot{color:#F2D49B}
 .hero-tiles{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
 .tile-p,.tile-g{border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px;min-height:80px;box-sizing:border-box;backdrop-filter:blur(8px)}
 .tile-p{background:#F2D49B;color:#14201C}
@@ -73,7 +68,7 @@ input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
 }
 @media (max-width:420px){.hero-foto{max-width:150px}.hero-selo{right:-140px;padding:10px 14px}}
 @media (prefers-reduced-motion: reduce){.onda-anel{animation:none;opacity:0}}
-@media (prefers-reduced-motion: reduce){.eq,.marquee,.pulse,.ring,.sonar,.draw{animation:none}.draw{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.pulse,.ring,.sonar,.draw{animation:none}.draw{stroke-dashoffset:0}}
 .sim-range{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;--p:0%}
 .sim-range::-webkit-slider-runnable-track{height:10px;border-radius:10px;background:linear-gradient(90deg,#F2D49B var(--p),#2C3833 var(--p))}
 .sim-range::-moz-range-track{height:10px;border-radius:10px;background:#2C3833}
@@ -85,7 +80,6 @@ input:focus,select:focus{outline:2px solid #1E6F66;outline-offset:1px}
 .sim-niv.on{color:#F2D49B}
 .sim-onda{position:absolute;left:0;right:0;bottom:0;height:46px;--corte:100%;background:repeating-linear-gradient(90deg,rgba(242,212,155,.28) 0 2px,transparent 2px 9px);-webkit-mask:linear-gradient(90deg,#000 0,#000 var(--corte),transparent var(--corte));mask:linear-gradient(90deg,#000 0,#000 var(--corte),transparent var(--corte));transition:none;pointer-events:none}
 /* ---- movimento ---- */
-#progresso{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#1E6F66,#C99A4E);z-index:40;pointer-events:none}
 header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 .navlinks a{position:relative;transition:color .2s ease}
 .navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:#1E6F66;transform:scaleX(0);transition:transform .3s ease}
@@ -98,29 +92,18 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 .enter{animation:en .45s cubic-bezier(.2,.7,.2,1) both}
 @keyframes en{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
 .anel{transition:stroke-dasharray 1.2s cubic-bezier(.2,.7,.2,1)}
-.flutua{animation:fl 5s ease-in-out infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.rot{display:inline-grid;justify-items:start;vertical-align:bottom;color:#1E6F66;font-weight:700;transition:width .45s ease}
-.rot>span{grid-area:1/1;white-space:nowrap;opacity:0;transform:translateY(60%);transition:opacity .5s ease,transform .5s ease}
-.rot>span.vis{opacity:1;transform:none}
-.rot>span.sai{opacity:0;transform:translateY(-60%)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #wa-flutua{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;text-decoration:none;background:#1E6F66;color:#FFFFFF;font-weight:700;font-size:15px;padding:0 20px 0 16px;height:58px;border-radius:999px;box-shadow:0 16px 36px rgba(20,32,28,.25);transform:translateY(120px);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .45s ease}
 #wa-flutua.vis{transform:none;opacity:1}
 #wa-flutua .halo{position:absolute;inset:0;border-radius:999px;border:2px solid #1E6F66;animation:sn 2.2s ease-out infinite;pointer-events:none}
 #wa-flutua:hover{color:#FFFFFF;background:#14514A}
 @media (max-width:760px){#wa-flutua .txt{display:none}#wa-flutua{width:58px;padding:0;justify-content:center}}
-.passo{transition:border-color .5s ease,box-shadow .5s ease,transform .5s ease}
-.passo .num{transition:color .5s ease}
-.passo.in{border-color:#1E6F66 !important;box-shadow:0 18px 40px rgba(30,111,102,.10)}
-.inclina{transition:transform .2s ease,box-shadow .25s ease;will-change:transform}
-@media (prefers-reduced-motion: reduce){.js .rv{opacity:1;transform:none;transition:none}.surge,.enter,.flutua,#wa-flutua .halo{animation:none}.anel{transition:none}.rot>span{transition:none}}
+@media (prefers-reduced-motion: reduce){.js .rv{opacity:1;transform:none;transition:none}.surge,.enter,#wa-flutua .halo{animation:none}.anel{transition:none}}
 </style>
 <script>if("IntersectionObserver" in window)document.documentElement.classList.add("js")</script>
 <style>html{scroll-behavior:smooth}*,*::before,*::after{box-sizing:border-box}h1,h2,h3,p{overflow-wrap:break-word}</style>
 </head>
 <body>
-<div id="progresso" aria-hidden="true"></div>
 <div style="font-family: Manrope, system-ui, sans-serif; color: #14201C; background: #FBFAF7; min-height: 100vh; overflow-x: hidden">
 
 <!-- HEADER -->
@@ -155,7 +138,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 <div class="hero-txt">
 <span class="hero-chip surge" style="--d: .05s"><span style="position: relative; width: 8px; height: 8px"><span style="position: absolute; inset: 0; border-radius: 50%; background: #F2D49B"></span><span class="pulse" style="position: absolute; inset: 0; border-radius: 50%; background: #F2D49B"></span></span>Fonoaudióloga, CRFa 6-7563, Itabirito/MG</span>
 <h1 class="surge" style="--d: .15s">Exames de audição, laudos e aparelhos auditivos em Itabirito.</h1>
-<p class="surge" style="--d: .3s">A fonoaudióloga <strong>Laisa Lima</strong> cuida da audição de <span class="sr">bebês, crianças, adultos e idosos</span><span class="rot" id="rot" aria-hidden="true"><span class="vis">bebês</span><span>crianças</span><span>adultos</span><span>idosos</span></span>: do Teste da Orelhinha à escolha e adaptação do aparelho auditivo.</p>
+<p class="surge" style="--d: .3s">A fonoaudióloga <strong>Laisa Lima</strong> cuida da audição de bebês, crianças, adultos e idosos: do Teste da Orelhinha à escolha e adaptação do aparelho auditivo.</p>
 <div class="hero-tiles surge" style="--d: .45s">
 <a href="#teste" class="btn tile-p" style="text-decoration: none; border-radius: 20px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; min-height: 80px; box-sizing: border-box">
 <span style="width: 46px; height: 46px; flex: none; border-radius: 14px; background: rgba(20,32,28,.10); display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14201C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15c-1.5-1.2-2.5-3-2.5-5a7 7 0 0 1 14 0c0 3-2 4.2-3.2 5.3-1 .9-1.3 1.7-1.3 2.7a3 3 0 0 1-5.5 1.6"/><path d="M9 10a3 3 0 0 1 6 0"/></svg></span>
@@ -181,7 +164,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 <span class="onda-anel" aria-hidden="true"></span><span class="onda-anel" aria-hidden="true" style="animation-delay: 1.2s"></span><span class="onda-anel" aria-hidden="true" style="animation-delay: 2.4s"></span>
 <img id="foto-laisa" src="img/laisa.jpg" alt="Fonoaudióloga Laisa Lima sorrindo, de jaleco" width="586" height="568">
 </div>
-<div class="hero-selo flutua"><strong>Laisa Lima</strong><span>Audiologia e Saúde Coletiva</span></div>
+<div class="hero-selo"><strong>Laisa Lima</strong><span>Audiologia e Saúde Coletiva</span></div>
 </div>
 
 </div>
@@ -203,9 +186,6 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #FFFFFF; background: #1E6F66; padding: 7px 14px; border-radius: 999px">Diagnóstico auditivo gratuito</span>
 <h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -0.03em">Sua audição precisa <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">de atenção?</span></h2>
 <p style="margin: 0; font-size: 15px; color: #55625D">6 perguntas e 6 sons. Resultado na hora.</p>
-</div>
-<div style="display: flex; align-items: flex-end; gap: 4px; height: 52px" aria-hidden="true">
-<span class="eq" style="display: block; width: 4px; height: 30%; border-radius: 3px; background: #C99A4E; opacity: 0.55; animation-delay: 0.00s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #1E6F66; opacity: 0.68; animation-delay: 0.07s;"></span><span class="eq" style="display: block; width: 4px; height: 80%; border-radius: 3px; background: #1E6F66; opacity: 0.80; animation-delay: 0.14s;"></span><span class="eq" style="display: block; width: 4px; height: 45%; border-radius: 3px; background: #1E6F66; opacity: 0.62; animation-delay: 0.21s;"></span><span class="eq" style="display: block; width: 4px; height: 95%; border-radius: 3px; background: #1E6F66; opacity: 0.88; animation-delay: 0.28s;"></span><span class="eq" style="display: block; width: 4px; height: 60%; border-radius: 3px; background: #C99A4E; opacity: 0.70; animation-delay: 0.35s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.42s;"></span><span class="eq" style="display: block; width: 4px; height: 70%; border-radius: 3px; background: #1E6F66; opacity: 0.75; animation-delay: 0.49s;"></span><span class="eq" style="display: block; width: 4px; height: 100%; border-radius: 3px; background: #1E6F66; opacity: 0.90; animation-delay: 0.56s;"></span><span class="eq" style="display: block; width: 4px; height: 50%; border-radius: 3px; background: #1E6F66; opacity: 0.65; animation-delay: 0.63s;"></span><span class="eq" style="display: block; width: 4px; height: 40%; border-radius: 3px; background: #C99A4E; opacity: 0.60; animation-delay: 0.70s;"></span><span class="eq" style="display: block; width: 4px; height: 85%; border-radius: 3px; background: #1E6F66; opacity: 0.82; animation-delay: 0.77s;"></span><span class="eq" style="display: block; width: 4px; height: 65%; border-radius: 3px; background: #1E6F66; opacity: 0.73; animation-delay: 0.84s;"></span><span class="eq" style="display: block; width: 4px; height: 30%; border-radius: 3px; background: #1E6F66; opacity: 0.55; animation-delay: 0.91s;"></span><span class="eq" style="display: block; width: 4px; height: 75%; border-radius: 3px; background: #1E6F66; opacity: 0.78; animation-delay: 0.98s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #C99A4E; opacity: 0.68; animation-delay: 1.05s;"></span><span class="eq" style="display: block; width: 4px; height: 90%; border-radius: 3px; background: #1E6F66; opacity: 0.85; animation-delay: 1.12s;"></span><span class="eq" style="display: block; width: 4px; height: 45%; border-radius: 3px; background: #1E6F66; opacity: 0.62; animation-delay: 1.19s;"></span><span class="eq" style="display: block; width: 4px; height: 60%; border-radius: 3px; background: #1E6F66; opacity: 0.70; animation-delay: 0.06s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.13s;"></span><span class="eq" style="display: block; width: 4px; height: 80%; border-radius: 3px; background: #C99A4E; opacity: 0.80; animation-delay: 0.20s;"></span><span class="eq" style="display: block; width: 4px; height: 50%; border-radius: 3px; background: #1E6F66; opacity: 0.65; animation-delay: 0.27s;"></span><span class="eq" style="display: block; width: 4px; height: 70%; border-radius: 3px; background: #1E6F66; opacity: 0.75; animation-delay: 0.34s;"></span><span class="eq" style="display: block; width: 4px; height: 40%; border-radius: 3px; background: #1E6F66; opacity: 0.60; animation-delay: 0.41s;"></span><span class="eq" style="display: block; width: 4px; height: 95%; border-radius: 3px; background: #1E6F66; opacity: 0.88; animation-delay: 0.48s;"></span><span class="eq" style="display: block; width: 4px; height: 55%; border-radius: 3px; background: #C99A4E; opacity: 0.68; animation-delay: 0.55s;"></span><span class="eq" style="display: block; width: 4px; height: 35%; border-radius: 3px; background: #1E6F66; opacity: 0.57; animation-delay: 0.62s;"></span><span class="eq" style="display: block; width: 4px; height: 65%; border-radius: 3px; background: #1E6F66; opacity: 0.73; animation-delay: 0.69s;"></span>
 </div>
 </div>
 
@@ -238,13 +218,6 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 </div>
 </section>
 
-<!-- MARQUEE -->
-<div style="background: #14201C; overflow: hidden" aria-label="Serviços: Teste da Orelhinha, Audiometria, Laudos audiológicos, Aparelhos auditivos, Saúde coletiva">
-<div class="marquee" aria-hidden="true" style="display: flex; width: max-content; gap: 28px; padding: 18px 0; font-family: Sora, sans-serif; font-size: 20px; font-weight: 400; color: #FFFFFF; white-space: nowrap">
-<span style="display: inline-flex; align-items: center; gap: 28px">Teste da Orelhinha<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Audiometria<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Laudos audiológicos<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Aparelhos auditivos<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Saúde coletiva<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Itabirito · MG<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Teste da Orelhinha<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Audiometria<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Laudos audiológicos<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Aparelhos auditivos<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Saúde coletiva<span style="color: #F2D49B">✦</span></span><span style="display: inline-flex; align-items: center; gap: 28px">Itabirito · MG<span style="color: #F2D49B">✦</span></span>
-</div>
-</div>
-
 <!-- EXAMES -->
 <section id="servicos" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 70px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
@@ -256,7 +229,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 </div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px">
-<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para recém-nascidos</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Teste da Orelhinha</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Triagem auditiva neonatal por Emissões Otoacústicas. Rápido, indolor e feito com o bebê dormindo, de preferência nos primeiros dias de vida.</p>
@@ -266,7 +239,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 </ul>
 </article>
 
-<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para todas as idades</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Audiometria</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Audiometria tonal e vocal em cabine acústica. Mede quanto e como você ouve e é a base para identificar a perda auditiva.</p>
@@ -278,7 +251,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 </svg>
 </article>
 
-<article class="card inclina" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<article class="card" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; color: #1E6F66; background: #E3F1EC; padding: 6px 12px; border-radius: 999px">Para pessoas e empresas</span>
 <h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em">Laudos audiológicos</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.65; color: #45524D">Laudos para admissional, periódico e demissional, PCMSO, concursos e processos que exigem comprovação da condição auditiva.</p>
@@ -291,7 +264,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 </section>
 
 <!-- APARELHOS -->
-<section id="aparelhos" style="padding: 0 clamp(16px, 4vw, 48px); scroll-margin-top: 70px">
+<section id="aparelhos" style="padding: 0 clamp(16px, 4vw, 48px) clamp(40px, 5vw, 64px); scroll-margin-top: 70px">
 <div style="max-width: 1240px; margin: 0 auto; border-radius: 36px; background: linear-gradient(135deg, #F7E6C4 0%, #EFD29B 60%, #E3BE79 100%); color: #14201C; padding: clamp(20px, 3vw, 32px); display: flex; flex-wrap: wrap; gap: 28px; align-items: center; position: relative; overflow: hidden">
 <svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; right: -80px; bottom: -120px; width: 480px; height: 480px; opacity: .25"><g fill="none" stroke="#9A6B26" stroke-width="1.5"><circle cx="200" cy="200" r="60"/><circle cx="200" cy="200" r="100"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="180"/></g></svg>
 <div style="position: relative; flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
@@ -311,48 +284,6 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
 <div style="background: #FFFFFF; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9A6B26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 10V7a4 4 0 0 1 8 0v3"/><rect x="5" y="10" width="14" height="11" rx="2"/></svg><span style="font-size: 14px; font-weight: 600; line-height: 1.45">Orientação de cuidados</span></div>
 </div>
 </div>
-</section>
-
-<!-- MITOS E VERDADES -->
-<section id="mitos" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 680px">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A6B26">Mito ou verdade?</span>
-<h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Toque no card e <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">descubra.</span></h2>
-</div>
-<span id="mitos-count" style="font-size: 14px; color: #55625D"></span>
-</div>
-<div id="mitos-lista" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px"></div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section id="como" style="max-width: 1240px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px); display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #9A6B26">Como funciona</span>
-<h2 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; letter-spacing: -0.03em">Quatro passos até <span style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-weight: 400; color: #1E6F66">ouvir melhor.</span></h2>
-</div>
-<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px">
-<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">01</span>
-<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Avaliação</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Conversa sobre sua rotina e exame completo para entender o tipo e o grau da perda.</p>
-</li>
-<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">02</span>
-<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Escolha</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Indicação dos modelos certos, com explicação clara de tecnologia, conforto e investimento.</p>
-</li>
-<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">03</span>
-<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Adaptação</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Regulagem fina do aparelho e orientação de uso, limpeza e cuidados.</p>
-</li>
-<li class="passo" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
-<span class="num" style="font-family: &#39;Instrument Serif&#39;, serif; font-style: italic; font-size: 52px; line-height: 1; color: #1E6F66">04</span>
-<h3 style="margin: 0; font-family: Sora, sans-serif; font-weight: 600; font-size: 19px">Acompanhamento</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #45524D">Retornos para ajustes e manutenção, acompanhando sua evolução.</p>
-</li>
-</ol>
 </section>
 
 <!-- ONDE ATENDE -->
@@ -428,7 +359,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
   var NUM = '553135624303';
   function wa(t) { return 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(t); }
   var IS = "font-family: 'Instrument Serif', serif; font-style: italic";
-  var S = { etapa: 'quiz', idx: 0, resp: [], fIdx: 0, ouviu: [], tocando: false, nome: '', servico: 'Avaliação auditiva / audiometria', fase: 0, perda: 0, virados: [] };
+  var S = { etapa: 'quiz', idx: 0, resp: [], fIdx: 0, ouviu: [], tocando: false, nome: '', servico: 'Avaliação auditiva / audiometria', fase: 0, perda: 0 };
 
   var perguntas = [
     'Você costuma pedir para as pessoas repetirem o que disseram?',
@@ -625,26 +556,6 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
     (function passo(ts) { if (!t0) t0 = ts; var k = Math.min(1, (ts - t0) / 600), e = 1 - Math.pow(1 - k, 3), v = de + (alvo - de) * e; r.value = v; aplicaSim(v); if (k < 1) animSim = requestAnimationFrame(passo); })(performance.now());
   }
 
-  var mitosData = [
-    { frase: 'Aparelho auditivo é só para idosos.', verdade: false, explica: 'A perda auditiva pode acontecer em qualquer idade. O aparelho é indicado pela necessidade, não pela idade.' },
-    { frase: 'Zumbido frequente no ouvido merece atenção.', verdade: true, explica: 'Zumbido pode estar ligado a alterações auditivas. Se é frequente, vale uma avaliação.' },
-    { frase: 'Fone alto por muitas horas pode prejudicar a audição.', verdade: true, explica: 'A exposição prolongada a som alto pode causar perda auditiva. Volume moderado e pausas ajudam a proteger.' },
-    { frase: 'Se o bebê reage a barulhos, não precisa do Teste da Orelhinha.', verdade: false, explica: 'O teste é obrigatório por lei e identifica alterações que não aparecem só observando o bebê.' }
-  ];
-  function renderMitos() {
-    var el = document.getElementById('mitos-lista'); if (!el) return;
-    el.innerHTML = mitosData.map(function (m, i) {
-      var ab = !!S.virados[i], cor = m.verdade ? '#1E6F66' : '#B04A30';
-      var st = 'font: inherit; text-align: left; cursor: pointer; min-height: 190px; border-radius: 26px; padding: 20px; display: flex; flex-direction: column; gap: 14px; transition: background .35s ease, color .35s ease, transform .35s ease; ' + (ab ? 'background: ' + cor + '; color: #FFFFFF; border: 1px solid ' + cor + '; transform: rotate(-1deg);' : 'background: #FFFFFF; color: #14201C; border: 1px solid #E6E1D6;');
-      var inner = ab
-        ? '<span style="align-self: flex-start; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: #FFFFFF; color: ' + cor + '">' + (m.verdade ? 'Verdade' : 'Mito') + '</span><span style="font-family: Sora, sans-serif; font-size: 16px; font-weight: 600; line-height: 1.35">“' + m.frase + '”</span><span style="font-size: 14px; line-height: 1.6">' + m.explica + '</span>'
-        : '<span style="' + IS + '; font-size: 44px; line-height: 1; color: #C99A4E">?</span><span style="font-family: Sora, sans-serif; font-size: 19px; font-weight: 600; line-height: 1.35">“' + m.frase + '”</span><span style="margin-top: auto; font-size: 13px; font-weight: 700; color: #1E6F66">Toque para revelar →</span>';
-      return '<button type="button" data-act="mito" data-i="' + i + '" aria-expanded="' + ab + '" style="' + st + '">' + inner + '</button>';
-    }).join('');
-    var n = S.virados.filter(Boolean).length, c = document.getElementById('mitos-count');
-    if (c) c.textContent = n === 0 ? '4 afirmações para testar o que você sabe' : n + ' de 4 reveladas';
-  }
-
   var ac = null, tt = null;
   function tocar() {
     try {
@@ -680,7 +591,6 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
     else if (a === 'refazer') { S.etapa = 'quiz'; S.idx = 0; S.resp = []; S.ouviu = []; S.fIdx = 0; renderDiag(); }
     else if (a === 'fase') { S.fase = S.fase === i ? -1 : i; renderFases(); }
     else if (a === 'perda') { irPara(i); }
-    else if (a === 'mito') { S.virados[i] = !S.virados[i]; renderMitos(); }
   });
   document.addEventListener('input', function (e) {
     if (e.target.id === 'sim-range') { cancelAnimationFrame(animSim); aplicaSim(+e.target.value); return; }
@@ -690,7 +600,7 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
     if (e.target.id === 'f-serv') { S.servico = e.target.value; var l = document.getElementById('f-wa'); if (l) l.href = waAgenda(); }
   });
 
-  renderDiag(); renderFases(); renderSim(); renderMitos();
+  renderDiag(); renderFases(); renderSim();
 
   /* ---------- movimento ---------- */
   var reduz = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -752,23 +662,9 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
     requestAnimationFrame(laco);
   })();
 
-  // palavra que alterna no topo
-  var rot = document.getElementById('rot');
-  if (rot) {
-    var rs = rot.children, ri = 0;
-    var ajusta = function () { rot.style.width = rs[ri].offsetWidth + 'px'; };
-    ajusta(); addEventListener('resize', ajusta);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajusta);
-    if (!reduz) setInterval(function () {
-      var a = rs[ri]; a.classList.remove('vis'); a.classList.add('sai');
-      ri = (ri + 1) % rs.length; rs[ri].classList.remove('sai'); rs[ri].classList.add('vis'); ajusta();
-      setTimeout(function () { a.classList.remove('sai'); }, 520);
-    }, 2300);
-  }
-
   // elementos surgem ao rolar
   if ('IntersectionObserver' in window) {
-    var sels = ['#teste > div > div', '#fases > div', '#simulador > div', '#servicos > div:first-child', '#servicos article', '#aparelhos > div', '#aparelhos > div > div:last-child > div', '#mitos > div', '#como > div', '#como li', '#local > div > *', 'footer'];
+    var sels = ['#teste > div > div', '#fases > div', '#simulador > div', '#servicos > div:first-child', '#servicos article', '#aparelhos > div', '#local > div > *', 'footer'];
     var fp = document.querySelector('footer'), ctaFinal = fp ? fp.previousElementSibling : null;
     if (ctaFinal) ctaFinal.firstElementChild.setAttribute('data-rv', '');
     var lista = [];
@@ -802,26 +698,13 @@ header.rolou{box-shadow:0 10px 30px rgba(20,32,28,.07)}
     Object.keys(links).forEach(function (k) { var s = document.getElementById(k); if (s) ioNav.observe(s); });
   }
 
-  // cards de serviço inclinam com o mouse
-  if (!reduz && window.matchMedia && matchMedia('(pointer: fine)').matches) {
-    document.querySelectorAll('.inclina').forEach(function (c) {
-      c.addEventListener('pointermove', function (e) {
-        if (c.classList.contains('rv')) return;
-        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-        c.style.transform = 'perspective(900px) rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 6).toFixed(2) + 'deg) translateY(-4px)';
-      });
-      c.addEventListener('pointerleave', function () { c.style.transform = ''; });
-    });
-  }
-
-  // barra de progresso, cabeçalho, foto e botão flutuante
-  var barra = document.getElementById('progresso'), cab = document.querySelector('header'), waf = document.getElementById('wa-flutua');
+  // cabeçalho e botão flutuante
+  var cab = document.querySelector('header'), waf = document.getElementById('wa-flutua');
   var hero = document.getElementById('inicio'), teste = document.getElementById('teste'), foto = document.getElementById('foto-laisa');
   var rodape = document.querySelector('footer'), fim = rodape ? rodape.previousElementSibling : null, pend = false;
   function aoRolar() {
     pend = false;
     var y = window.scrollY || 0, max = document.documentElement.scrollHeight - innerHeight, H = innerHeight;
-    if (barra) barra.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
     if (cab) cab.classList.toggle('rolou', y > 8);
     if (waf) {
       var t = teste ? teste.getBoundingClientRect() : null, f = fim ? fim.getBoundingClientRect() : null;
